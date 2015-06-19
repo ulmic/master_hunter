@@ -22,6 +22,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'rails_12factor', group: :production
 gem 'auto_html', git: "git://github.com/dejan/auto_html"
+gem 'font-awesome-rails'
 
 group :test do
   gem 'tconsole', github: 'ulmic/tconsole', branch: 'rails4'

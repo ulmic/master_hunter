@@ -17,7 +17,11 @@
     .navbar-collapse.collapse
       %ul.nav.navbar-nav
         = menu_item success_stories_path do
+          %span.fa.fa-star
           = t('web.success_stories.index.title')
+        = menu_item new_post_path do
+          %span.fa.fa-plus
+          = t('web.posts.new.title')
   .container
     = yield
   %hr
