@@ -1,12 +1,12 @@
 = stylesheet_link_tag :posts
 %section.slideCheckboxSection{ title: '.slideThree' }
   %span
-    = t('.one_pet')
-  .slideCheckbox
-    %input#slideThree{ checked: 'checked', name: 'check', type: 'checkbox', value: 'None' }
-    %label{ for: 'slideThree' }
-  %span
     = t('.many_pets')
+  .slideCheckbox
+    %input#postTypeCheckbox{ checked: 'checked', name: 'check', type: 'checkbox', value: 'None' }
+    %label{ for: 'postTypeCheckbox' }
+  %span
+    = t('.one_pet')
 = simple_form_for @post, html: { class: 'form-horizontal' } do |f|
   - f.with_options input_html: { class: 'span5' } do |f|
     = f.input :nickname
