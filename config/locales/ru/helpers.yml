@@ -1,0 +1,7 @@
+ru:
+  helpers:
+    cancel: Отмена
+    save: Сохранить
+    create: Создать
+    auth: Войти
+    sign_out: Выйти

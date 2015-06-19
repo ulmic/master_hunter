@@ -1,9 +1,7 @@
 ru:
-  cancel: Отмена
-  save: Сохранить
-  create: Создать
-  auth: Войти
-  sign_out: Выйти
+  application:
+    attributes:
+      name: Ищу хозяина
   web:
     users:
       new:
@@ -14,3 +12,6 @@ ru:
       index:
         title: Объявления
         new: Добавить объявление
+    success_stories:
+      index:
+        title: Истории успеха

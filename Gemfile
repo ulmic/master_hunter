@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.0.1'
+gem 'rails', '~> 4.2'
 
 gem 'pg'
 gem 'unicorn'
@@ -16,7 +16,7 @@ gem 'jquery-ui-rails'
 gem 'simple_form'
 gem 'twitter-bootstrap-rails'
 gem 'virtus'
-gem 'state_machine'
+gem 'state_machine', github: 'seuros/state_machine'
 gem 'russian'
 gem 'carrierwave'
 gem 'mini_magick'
@@ -24,7 +24,7 @@ gem 'rails_12factor', group: :production
 gem 'auto_html', git: "git://github.com/dejan/auto_html"
 
 group :test do
-  gem 'tconsole'
+  gem 'tconsole', github: 'ulmic/tconsole', branch: 'rails4'
   gem 'coveralls'
   gem 'wrong'
   gem 'factory_girl_rails'
