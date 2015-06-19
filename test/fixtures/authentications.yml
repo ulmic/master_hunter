@@ -1,0 +1,14 @@
+# Read about fixtures at
+# http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  uid: MyText
+  provider: MyText
+  user_id: 1
+  access: MyText
+
+two:
+  uid: MyText
+  provider: MyText
+  user_id: 1
+  access: MyText

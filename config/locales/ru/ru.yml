@@ -2,6 +2,8 @@ ru:
   application:
     attributes:
       name: Ищу хозяина
+  social_networks:
+    vkontakte: ВКонтакте
   web:
     users:
       new:

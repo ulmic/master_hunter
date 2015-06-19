@@ -1,4 +1,5 @@
 MasterHunter::Application.routes.draw do
+  get '/auth/:provider/callback' => 'web/omniauth#callback'
   scope module: :web do
     root to: "welcome#index"
     resources :users, only: [:create, :new]

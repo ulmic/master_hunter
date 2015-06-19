@@ -11,32 +11,46 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140105162820) do
+ActiveRecord::Schema.define(version: 20150619115726) do
 
-  create_table "posts", force: true do |t|
-    t.string   "nickname"
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "authentications", force: :cascade do |t|
+    t.text     "uid"
+    t.text     "provider"
+    t.integer  "user_id"
+    t.text     "access"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.string   "nickname",          limit: 255
     t.text     "description"
     t.text     "place"
     t.date     "date"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "state"
-    t.string   "publication_state"
-    t.string   "photo"
+    t.string   "state",             limit: 255
+    t.string   "publication_state", limit: 255
+    t.string   "photo",             limit: 255
     t.integer  "user_id"
-    t.string   "story_state"
+    t.string   "story_state",       limit: 255
   end
 
   add_index "posts", ["user_id"], name: "index_posts_on_user_id", using: :btree
 
-  create_table "users", force: true do |t|
-    t.string   "name"
-    t.string   "email"
-    t.string   "password_digest"
-    t.string   "phone"
+  create_table "users", force: :cascade do |t|
+    t.string   "name",            limit: 255
+    t.string   "email",           limit: 255
+    t.string   "password_digest", limit: 255
+    t.string   "phone",           limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "admin",           default: false
+    t.boolean  "admin",                       default: false
+    t.text     "first_name"
+    t.text     "last_name"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

@@ -4,8 +4,10 @@ class User < ActiveRecord::Base
   has_many :posts
 
   validates :email, email: true,
-                    presence: true,
-                    uniqueness: true
+                    uniqueness: true,
+                    allow_blank: true
+  validates :first_name, presence: true
+  validates :last_name, presence: true
 
   validates :password_digest, presence: true
 end

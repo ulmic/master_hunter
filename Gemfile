@@ -23,17 +23,25 @@ gem 'mini_magick'
 gem 'rails_12factor', group: :production
 gem 'auto_html', git: "git://github.com/dejan/auto_html"
 gem 'font-awesome-rails'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-vkontakte'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
+gem 'enumerize'
 
 group :test do
   gem 'tconsole', github: 'ulmic/tconsole', branch: 'rails4'
   gem 'coveralls'
   gem 'wrong'
   gem 'factory_girl_rails'
-  gem 'pry'
 end
 
 group :assets do
   gem 'sass-rails', '~> 4.0.0'
   gem 'uglifier', '>= 1.3.0'
   gem 'coffee-rails', '~> 4.0.0'
+end
+
+group :development, :test do
+  gem 'pry'
 end
