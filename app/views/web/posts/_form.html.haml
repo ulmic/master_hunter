@@ -4,7 +4,7 @@
     = f.input :nickname
     = f.input :description
     = f.input :place
-    = f.input :date
+    = f.input :date, as: :date_picker
     = f.input :photo
     = f.input :user_id, as: :hidden, input_html: { value: current_user.id }
   .form-actions

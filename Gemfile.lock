@@ -7,6 +7,13 @@ GIT
       rinku (~> 1.7)
 
 GIT
+  remote: git://github.com/derekprior/momentjs-rails.git
+  revision: e02512db27ff9fc25a8856ef5a9830d97ce8e818
+  specs:
+    momentjs-rails (2.10.3)
+      railties (>= 3.1)
+
+GIT
   remote: git://github.com/seuros/state_machine.git
   revision: b5baef856b170f18dc2fdc36def2411c255335b9
   specs:
@@ -21,6 +28,14 @@ GIT
       ansi
       chattyproc (~> 1.0.0)
       term-ansicolor (~> 1.0.7)
+
+GIT
+  remote: git://github.com/zpaulovics/datetimepicker-rails.git
+  revision: 36d21cec5da7f5b214925804f60e63c61c747023
+  submodules: true
+  specs:
+    datetimepicker-rails (4.7.16)
+      momentjs-rails (>= 2.9.0)
 
 GEM
   remote: https://rubygems.org/
@@ -316,6 +331,7 @@ DEPENDENCIES
   carrierwave
   coffee-rails (~> 4.0.0)
   coveralls
+  datetimepicker-rails!
   enumerize
   factory_girl_rails
   font-awesome-rails
@@ -325,6 +341,7 @@ DEPENDENCIES
   jquery-ui-rails
   mini_magick
   minitest-rails
+  momentjs-rails (~> 2.9)!
   omniauth-facebook
   omniauth-google-oauth2
   omniauth-twitter
