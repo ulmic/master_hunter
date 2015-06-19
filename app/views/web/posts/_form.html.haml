@@ -16,9 +16,9 @@
     = f.input :date, as: :date_picker
     = f.input :photo
     = f.input :pet_type
-    = f.input :sterilization
-    = f.input :inoculation
-    = f.input :sex
+    = f.input :sterilization, as: :radio_buttons
+    = f.input :inoculation, as: :radio_buttons
+    = f.input :sex, as: :radio_buttons
     = f.input :user_id, as: :hidden, input_html: { value: current_user.id }
   .form-actions
     = f.button :submit, class: 'btn btn-primary'
