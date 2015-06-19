@@ -11,6 +11,9 @@ ru:
     posts:
       new:
         title: Создать объявление
+      form:
+        one_pet: Одно животное
+        many_pets: Несколько животных
       index:
         title: Объявления
         new: Добавить объявление

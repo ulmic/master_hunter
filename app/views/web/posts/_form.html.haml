@@ -1,11 +1,24 @@
 = stylesheet_link_tag :posts
+%section.slideCheckboxSection{ title: '.slideThree' }
+  %span
+    = t('.one_pet')
+  .slideCheckbox
+    %input#slideThree{ checked: 'checked', name: 'check', type: 'checkbox', value: 'None' }
+    %label{ for: 'slideThree' }
+  %span
+    = t('.many_pets')
 = simple_form_for @post, html: { class: 'form-horizontal' } do |f|
   - f.with_options input_html: { class: 'span5' } do |f|
     = f.input :nickname
+    = f.input :phone, as: :string
     = f.input :description
     = f.input :place
     = f.input :date, as: :date_picker
     = f.input :photo
+    = f.input :pet_type
+    = f.input :sterilization
+    = f.input :inoculation
+    = f.input :sex
     = f.input :user_id, as: :hidden, input_html: { value: current_user.id }
   .form-actions
     = f.button :submit, class: 'btn btn-primary'
