@@ -11,8 +11,10 @@ $ ->
   $pet_type_string_input.hide()
   $('select#post_pet_type').change ->
     if $(this).val() == 'another'
+      $pet_type_string_input.find('input').prop('disabled', false)
       $pet_type_string_input.slideDown()
     else
+      $pet_type_string_input.find('input').prop('disabled', true)
       $pet_type_string_input.slideUp()
 
 

@@ -12,6 +12,11 @@
     %header
       %h2
         Приютите будущего друга!
+      %p
+        Уже
+        %b{style: 'font-weight: bold'}
+          234
+        питомцев нашли своих хозяев
       .row.features-row.tablist
         %li.4u.tab.active
           %a{href: '#', 'data-tab-id' => 'cats'}
@@ -30,7 +35,7 @@
             %h4 Другие животные
     .pets.tab-content
       .tab-pane.active#cats
-        - @posts.in_groups_of(3, false).each do |posts_group|
+        - @cats_posts.in_groups_of(3, false).each do |posts_group|
           .row
             - posts_group.each do |post|
               .4u{:class => "12u(narrower)"}
@@ -39,15 +44,35 @@
                     .background-image{style: "background-image: url('#{post.photo.thumb}')" }
                   %h3= post.nickname
                   %p= post.description
-                  %a{ href: post.user }
-                    = post.phone
+                  %ul.actions
+                    %li
+                      %a.button.alt{:href => post_path(post)} Узнать больше
+      .tab-pane#dogs
+        - @dogs_posts.in_groups_of(3, false).each do |posts_group|
+          .row
+            - posts_group.each do |post|
+              .4u{:class => "12u(narrower)"}
+                %section.box.special.pet
+                  %span.image.featured
+                    .background-image{style: "background-image: url('#{post.photo.thumb}')" }
+                  %h3= post.nickname
+                  %p= post.description
                   %ul.actions
                     %li
                       %a.button.alt{:href => post_path(post)} Узнать больше
       .tab-pane#another
-        hui2
-      .tab-pane#dogs
-        hui
+        - @another_posts.in_groups_of(3, false).each do |posts_group|
+          .row
+            - posts_group.each do |post|
+              .4u{:class => "12u(narrower)"}
+                %section.box.special.pet
+                  %span.image.featured
+                    .background-image{style: "background-image: url('#{post.photo.thumb}')" }
+                  %h3= post.nickname
+                  %p= post.description
+                  %ul.actions
+                    %li
+                      %a.button.alt{:href => post_path(post)} Узнать больше
 / CTA
 %section#cta
   %h2 Sign up for beta access
