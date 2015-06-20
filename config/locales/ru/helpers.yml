@@ -6,4 +6,4 @@ ru:
     create: Создать
     auth: Войти
     sign_out: Выйти
-    auth_via: 'Авторизовываться через %{network}'
+    auth_via: 'Авторизоваться через %{network}'
