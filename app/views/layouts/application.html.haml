@@ -3,12 +3,14 @@
   %meta{:charset => "utf-8"}/
   %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
 
-  = stylesheet_link_tag    "web/application"
+  = stylesheet_link_tag    "landing/application"
   = javascript_include_tag "application"
+  = javascript_include_tag "landing"
   = csrf_meta_tags
-%body.landing
-  = render 'layouts/header'
-  .container
-    = yield
+%body
+  #page-wrapper
+    = render 'layouts/header'
+    #main{class: "container 75%"}
+      = yield
   %hr
   -#= render 'layouts/footer'

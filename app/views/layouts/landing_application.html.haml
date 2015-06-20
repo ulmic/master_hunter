@@ -8,8 +8,8 @@
   = javascript_include_tag "landing"
   = csrf_meta_tags
 %body.landing
-  = render 'layouts/header'
-  .container
+  #page-wrapper
+    = render 'layouts/header_landing'
     = yield
   %hr
   -#= render 'layouts/footer'
