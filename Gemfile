@@ -30,6 +30,7 @@ gem 'omniauth-facebook'
 gem 'enumerize'
 gem 'datetimepicker-rails', github: 'zpaulovics/datetimepicker-rails', submodules: true
 gem 'momentjs-rails', '~> 2.9',  github: 'derekprior/momentjs-rails'
+gem 'inline_svg'
 
 group :test do
   gem 'tconsole', github: 'ulmic/tconsole', branch: 'rails4'
@@ -42,6 +43,7 @@ group :assets do
   gem 'sass-rails', '~> 4.0.0'
   gem 'uglifier', '>= 1.3.0'
   gem 'coffee-rails', '~> 4.0.0'
+  gem 'sprockets'
 end
 
 group :development, :test do

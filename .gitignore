@@ -16,3 +16,7 @@
 /public/assets
 /public/uploads
 *.swo
+
+*~
+\#*\#
+.\#*

@@ -1,12 +1,21 @@
-.offset3.span5
-  %h2= t('auth')
+%header
+  %h3 Войти
+.box
   = simple_form_for @session, url: session_path do |f|
-    - f.with_options input_html: { class: :span4 } do |f|
-      .field
-        = f.input :email
-        = f.input :password
-    .form-actions
-      = f.button :submit, value: t('auth'), class: 'btn btn-primary'
-      = link_to t('cancel'), root_path, class: 'btn'
-      = link_to auth_path(:vkontakte) do
-        = t('helpers.auth_via', network: t('social_networks.vkontakte'))
+    .row.uniform
+      .12u
+        = f.input :email, label: false, placeholder: "Email", input_html: {class: ''}
+    .row.uniform
+      .12u
+        = f.input :password, label: false, placeholder: "Пароль", input_html: {class: ''}
+    .row.uniform
+      .12u
+        = link_to auth_path(:vkontakte) do
+          = t('helpers.auth_via', network: t('social_networks.vkontakte'))
+    .row.uniform
+      .12u
+        %ul.actions.align-center
+          %li
+            = f.button :submit, value: 'Войти', class: 'btn btn-primary'
+          %li
+            = link_to 'Назад', root_path, class: 'btn'

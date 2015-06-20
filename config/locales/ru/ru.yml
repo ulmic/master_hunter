@@ -5,6 +5,8 @@ ru:
   social_networks:
     vkontakte: ВКонтакте
   web:
+    header:
+      how_i_help: Как я могу помочь?
     users:
       new:
         title: Зарегистрироваться

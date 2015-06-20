@@ -1,3 +1,53 @@
+%section#banner
+  %h2 Я ищу свой дом!
+  %p Помогите питомцу найти своего хозяина!
+  %ul.actions
+    %li
+      %a.button.special{:href => "#main"} Приютить питомца
+    %li
+      %a.button{:href => new_post_path} Сделать объявление
+/ Main
+%section#main.container
+  %section.box.special.grey
+    %header
+      %h2
+        Приютите будущего друга!
+      .row.features-row
+        %section.4u
+          %span.icon.major.fa-bolt.accent2.selected
+            = inline_svg('cat31.svg', class: "feature-image")
+          %h4 Кошки
+        %section.4u
+          %span.icon.major.fa-area-chart.accent4
+            = inline_svg('dog.svg', class: "feature-image")
+          %h4 Собаки
+        %section.4u
+          %span.icon.major.fa-area-chart.accent5
+            = inline_svg('parrot.svg', class: "feature-image")
+          %h4 Другие животные
+    .pets
+      - 2.times do
+        .row
+          - 3.times do
+            .4u{:class => "12u(narrower)"}
+              %section.box.special.pet
+                %span.image.featured
+                  %img{:alt => "", :src => image_path("pic02.jpg")}/
+                %h3 Федя
+                %p Прекрасный товарищ и верная моська, всегда мягкий и уютный
+                %ul.actions
+                  %li
+                    %a.button.alt{:href => "#"} Узнать больше
+/ CTA
+%section#cta
+  %h2 Sign up for beta access
+  %p Blandit varius ut praesent nascetur eu penatibus nisi risus faucibus nunc.
+  %form
+    .row.uniform{:class => "50%"}
+      .8u{:class => "12u(mobilep)"}
+        %input#email{:name => "email", :placeholder => "Email Address", :type => "email"}/
+      .4u{:class => "12u(mobilep)"}
+        %input.fit{:type => "submit", :value => "Sign Up"}/
 - @posts.each do |post|
   .row{ onclick: "return location.href = '#{post_path(post)}'"}
     .span3

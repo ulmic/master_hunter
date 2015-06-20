@@ -3,7 +3,7 @@ development:
   encoding: unicode
   database: master_hunter_develoment
   pool: 5
-  username: postgres
+  username: haukot
   password:
 
 test:

@@ -1,28 +1,16 @@
 %head
   %title MasterHunter
-  = stylesheet_link_tag    "bootstrap_and_overrides", media: "all"
-  = stylesheet_link_tag    "application"
+  %meta{:charset => "utf-8"}/
+  %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
+
+  = stylesheet_link_tag    "landing/application"
   = javascript_include_tag "application"
+  = javascript_include_tag "landing"
   = csrf_meta_tags
 %body
-  %header.navbar.navbar-default
-    .navbar-header
-      %button.navbar-toggle{ type: :button, data: { toggle: :collapse, target: '.navbar-collapse' } }
-        %span.icon-bar
-        %span.icon-bar
-        %span.icon-bar
-      %a.navbar-brand{ href: root_path }
-        %span
-          = t('application.attributes.name')
-    .navbar-collapse.collapse
-      %ul.nav.navbar-nav
-        = menu_item success_stories_path do
-          %span.fa.fa-star
-          = t('web.success_stories.index.title')
-        = menu_item new_post_path do
-          %span.fa.fa-plus
-          = t('web.posts.new.title')
-  .container
-    = yield
+  #page-wrapper
+    = render 'layouts/header'
+    #main{class: "container 75%"}
+      = yield
   %hr
   -#= render 'layouts/footer'

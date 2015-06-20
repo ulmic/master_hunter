@@ -1,27 +1,37 @@
-= stylesheet_link_tag :posts
+= stylesheet_link_tag 'web/posts'
 %section.slideCheckboxSection{ title: '.slideThree' }
   %span
     = t('.many_pets')
-  .slideCheckbox
+  .slideCheckbox#we-need-it
     %input#postTypeCheckbox{ checked: 'checked', name: 'check', type: 'checkbox', value: 'None' }
     %label{ for: 'postTypeCheckbox' }
   %span
     = t('.one_pet')
 = simple_form_for @post, html: { class: 'form-horizontal' } do |f|
-  - f.with_options input_html: { class: 'span5' } do |f|
-    = f.input :nickname
-    = f.input :phone, as: :string
-    = f.input :description
-    = f.input :address, as: :string
-    = f.input :place
-    = f.input :photo
-    = f.input :pet_type, as: :select, collection: I18n.t('enumerize.post.pet_type').invert
-    #pet_type_string_input
-      = f.input :pet_type, as: :string, label: false
-    = f.input :sterilization, as: :radio_buttons
-    = f.input :inoculation, as: :radio_buttons
-    = f.input :sex, as: :radio_buttons
-    = f.input :user_id, as: :hidden, input_html: { value: current_user.id }
+  - f.with_options input_html: { class: '' }, wrapper_html: {class: '12u'} do |f|
+    .row.uniform
+      = f.input :nickname
+    .row.uniform
+      = f.input :phone, as: :string
+    .row.uniform
+      = f.input :description
+    .row.uniform
+      = f.input :address, as: :string
+    .row.uniform
+      = f.input :place
+    .row.uniform
+      = f.input :photo
+    .row.uniform
+      = f.input :pet_type, as: :select, collection: I18n.t('enumerize.post.pet_type').invert
+      #pet_type_string_input
+        = f.input :pet_type, as: :string, label: false
+    .row.uniform
+      = f.input :sterilization, as: :radio_buttons
+      = f.input :inoculation, as: :radio_buttons
+    .row.uniform
+      = f.input :sex, as: :radio_buttons
+    .row.uniform
+      = f.input :user_id, as: :hidden, input_html: { value: current_user.id }
   .form-actions
     = f.button :submit, class: 'btn btn-primary'
     = link_to t('cancel', default: t("helpers.links.cancel")), posts_path, class: 'btn'
