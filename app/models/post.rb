@@ -1,3 +1,4 @@
+# coding: utf-8
 class Post < ActiveRecord::Base
   include PostRepository
 
@@ -5,7 +6,6 @@ class Post < ActiveRecord::Base
 
   validates :description, presence: true
   validates :place, presence: true
-  validates :date, presence: true
 
   mount_uploader :photo, PostPhotoUploader
 

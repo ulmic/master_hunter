@@ -5,6 +5,8 @@
 
 $(function() {
     $('.tablist .tab a').click(function(){
+        $('.tablist .tab').removeClass('active');
+        $(this).parent().addClass('active');
         var elId = $(this).data('tab-id');
         $('.tab-pane').removeClass('active');
         $('#' + elId).addClass('active');

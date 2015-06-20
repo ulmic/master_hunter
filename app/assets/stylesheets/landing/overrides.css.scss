@@ -26,6 +26,14 @@ $text-shadow-color: #888;
     }
 }
 
+.background-image {
+    width: 100%;
+    height: 200px;
+    background-repeat: no-repeat;
+    background-position-y: 50%;
+    background-size: cover;
+}
+
 .tab-content {
     .tab-pane {
         display: none;

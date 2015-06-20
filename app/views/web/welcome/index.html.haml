@@ -29,23 +29,25 @@
               = inline_svg('parrot.svg', class: "feature-image")
             %h4 Другие животные
     .pets.tab-content
-      .tab-pane.active#another
-        hui2
-      .tab-pane#dogs
-        hui
-      .tab-pane#cats
-        - 2.times do
+      .tab-pane.active#cats
+        - @posts.in_groups_of(3, false).each do |posts_group|
           .row
-            - 3.times do
+            - posts_group.each do |post|
               .4u{:class => "12u(narrower)"}
                 %section.box.special.pet
                   %span.image.featured
-                    %img{:alt => "", :src => image_path("pic02.jpg")}/
-                  %h3 Федя
-                  %p Прекрасный товарищ и верная моська, всегда мягкий и уютный
+                    .background-image{style: "background-image: url('#{post.photo.thumb}')" }
+                  %h3= post.nickname
+                  %p= post.description
+                  %a{ href: post.user }
+                    = post.phone
                   %ul.actions
                     %li
-                      %a.button.alt{:href => "#"} Узнать больше
+                      %a.button.alt{:href => post_path(post)} Узнать больше
+      .tab-pane#another
+        hui2
+      .tab-pane#dogs
+        hui
 / CTA
 %section#cta
   %h2 Sign up for beta access
@@ -56,16 +58,3 @@
         %input#email{:name => "email", :placeholder => "Email Address", :type => "email"}/
       .4u{:class => "12u(mobilep)"}
         %input.fit{:type => "submit", :value => "Sign Up"}/
-- @posts.each do |post|
-  .row{ onclick: "return location.href = '#{post_path(post)}'"}
-    .span3
-      %img{ src: post.photo.thumb, class: 'img-polaroid' }
-    .span4
-      %h2= post.nickname
-      = post.description
-      %br
-      %a{ href: post.user }
-        = post.user.phone
-      %br
-      = post.date
-  %hr
