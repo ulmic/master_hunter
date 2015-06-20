@@ -1,6 +1,7 @@
 ru:
   helpers:
-    cancel: Отмена
+    links:
+      cancel: Отмена
     save: Сохранить
     create: Создать
     auth: Войти

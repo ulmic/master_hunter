@@ -12,10 +12,12 @@
     = f.input :nickname
     = f.input :phone, as: :string
     = f.input :description
+    = f.input :address, as: :string
     = f.input :place
-    = f.input :date, as: :date_picker
     = f.input :photo
-    = f.input :pet_type
+    = f.input :pet_type, as: :select, collection: I18n.t('enumerize.post.pet_type').invert
+    #pet_type_string_input
+      = f.input :pet_type, as: :string, label: false
     = f.input :sterilization, as: :radio_buttons
     = f.input :inoculation, as: :radio_buttons
     = f.input :sex, as: :radio_buttons

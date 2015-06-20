@@ -10,15 +10,16 @@ ru:
         password: Пароль
       post:
         description: Описание
-        place: Место
+        place: Как найти животное (подъезд, двор и т.д.)
         date: Дата нахождения
         photo: Фото
-        nickname: Кличка
+        nickname: Кличка (если есть)
         pet_type: Тип животного
         sterilization: Стерилизация
         inoculation: Прививание
         phone: Ваш телефон (будет показан только зарегистрирован пользователям)
         sex: Пол животного
+        address: Адрес дома или двора
   activemodel:
     attributes:
       user_sign_in_type:

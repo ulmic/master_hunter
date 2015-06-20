@@ -11,7 +11,6 @@ class Post < ActiveRecord::Base
 
   extend Enumerize
   # TODO возможность ввести свой вид животного
-  enumerize :pet_type, in: [ :cat, :dog, :another ], default: :cat
   enumerize :sterilization, in: [ :sterilized, :not_sterilized, :unknown ], default: :unknown
   enumerize :inoculation, in: [ :vaccinated, :not_vaccinated, :unknown ], default: :unknown
   enumerize :sex, in: [ :male, :female, :unknown ], default: :unknown
