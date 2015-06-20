@@ -40,5 +40,4 @@
       = @post.address
 
   .12u
-    %span.post{ data: { city: @post.city, address: @post.address } }
-    = render 'map'
+    = render 'map', city: @post.city, address: @post.address

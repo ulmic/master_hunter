@@ -22,7 +22,10 @@ $ ->
 
   $ ->
     e.preventDefault()
-    url = "http://geocode-maps.yandex.ru/1.x/?geocode=#{$('#places_place_state').val()}+#{$('#places_place_city').val()}+#{$('#places_place_address').val()}&format=json"
+    $info_span = $('span.post')
+    city = $info_span.data('city')
+    address = $info_span.data('address')
+    url = "http://geocode-maps.yandex.ru/1.x/?geocode=#{city}+#{address}&format=json"
     $.ajax {
       url: url
       dataType: 'json'
