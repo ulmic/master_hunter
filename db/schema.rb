@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 20150620125345) do
     t.text     "phone"
     t.text     "sex"
     t.text     "address"
+    t.text     "city"
   end
 
   add_index "posts", ["user_id"], name: "index_posts_on_user_id", using: :btree
