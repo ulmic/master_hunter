@@ -26,13 +26,29 @@ $text-shadow-color: #888;
     }
 }
 
+.tab-content {
+    .tab-pane {
+        display: none;
+        &.active {
+            display: block;
+        }
+    }
+}
 .features-row.row {
     margin: 2em 0 2em -2em;
+    .tab {
+        a {
+            display: inline-block;
+            border: 0;
+        }
+        &.active {
+            .icon.major {
+                border: 5px solid rgb(223, 223, 223);
+            }
+        }
+    }
     .icon.major {
         margin-bottom: 0.5em;
-        &.selected {
-            border: 5px solid rgb(223, 223, 223);
-        }
         .feature-image {
             height: 66%;
             width: 66%;
