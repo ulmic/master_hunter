@@ -6,9 +6,6 @@
       = image_tag @post.photo.thumb
   .8u
     .row-fluid
-      Адрес:
-      = @post.address
-    .row-fluid
       Как найти:
       = @post.place
     .row-fluid
@@ -36,3 +33,11 @@
         Нет
       - else
         = @post.inoculation_text
+.row
+  .12u
+    .row-fluid
+      Адрес:
+      = @post.address
+
+  .12u
+    this is map
