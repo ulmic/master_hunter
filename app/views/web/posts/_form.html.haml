@@ -22,9 +22,11 @@
     .row.uniform
       = f.input :photo
     .row.uniform
-      = f.input :pet_type, as: :select, collection: I18n.t('enumerize.post.pet_type').invert
-      #pet_type_string_input
-        = f.input :pet_type, as: :string, label: false
+      .12u
+        - f.with_options input_html: { class: '' }, wrapper_html: {class: 'select-wrapper'} do |f|
+          = f.input :pet_type, as: :select, label: false, prompt: '- Тип животного -', collection: I18n.t('enumerize.post.pet_type').invert
+        #pet_type_string_input
+          = f.input :pet_type, as: :string, label: false
     .row.uniform
       = f.input :sterilization, as: :radio_buttons
       = f.input :inoculation, as: :radio_buttons
