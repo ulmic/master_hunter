@@ -6,19 +6,29 @@
       = image_tag @post.photo.thumb
   .8u
     .row-fluid
-      Как найти:
-      = @post.place
-    .row-fluid
-      Описание:
+      %b
+        Описание:
       = @post.description
     .row-fluid
-      Пол:
+      %b
+        Как найти:
+      = @post.place
+    .row-fluid
+      %b
+        Пол:
       = @post.sex_text
     .row-fluid
-      Узнать больше по телефону:
+      %b
+        Узнать больше по телефону:
       = @post.phone
+      %b
+        или
+      %a{href: "https://vk.com/id#{@post.user.authentications.first.uid}" }
+        %b
+        Связаться вконтакте
     .row-fluid
-      Стерилизован?
+      %b
+        Стерилизован?
       - if @post.sterilization.sterilized?
         Да
       - elsif @post.sterilization.not_sterilized?
@@ -26,7 +36,8 @@
       - else
         = @post.sterilization_text
     .row-fluid
-      Привит?
+      %b
+        Привит?
       - if @post.inoculation.vaccinated?
         Да
       - elsif @post.inoculation.not_vaccinated?
@@ -36,7 +47,8 @@
 .row
   .12u
     .row-fluid
-      Адрес:
+      %b
+        Адрес:
       = @post.address
 
   .12u

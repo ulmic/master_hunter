@@ -43,7 +43,7 @@
                   %span.image.featured
                     .background-image{style: "background-image: url('#{post.photo.thumb}')" }
                   %h3= post.nickname
-                  %p= post.description
+                  %p= post.description.truncate(50, separator: '.')
                   %ul.actions
                     %li
                       %a.button.alt{:href => post_path(post)} Узнать больше
@@ -56,7 +56,7 @@
                   %span.image.featured
                     .background-image{style: "background-image: url('#{post.photo.thumb}')" }
                   %h3= post.nickname
-                  %p= post.description
+                  %p= post.description.truncate(50, separator: '.')
                   %ul.actions
                     %li
                       %a.button.alt{:href => post_path(post)} Узнать больше
@@ -69,17 +69,7 @@
                   %span.image.featured
                     .background-image{style: "background-image: url('#{post.photo.thumb}')" }
                   %h3= post.nickname
-                  %p= post.description
+                  %p= post.description.truncate(50, separator: '.')
                   %ul.actions
                     %li
                       %a.button.alt{:href => post_path(post)} Узнать больше
-/ CTA
-%section#cta
-  %h2 Sign up for beta access
-  %p Blandit varius ut praesent nascetur eu penatibus nisi risus faucibus nunc.
-  %form
-    .row.uniform{:class => "50%"}
-      .8u{:class => "12u(mobilep)"}
-        %input#email{:name => "email", :placeholder => "Email Address", :type => "email"}/
-      .4u{:class => "12u(mobilep)"}
-        %input.fit{:type => "submit", :value => "Sign Up"}/

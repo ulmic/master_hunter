@@ -6,7 +6,7 @@ default: &default
 
 development:
   <<: *default
-  username: develop
+  username: haukot
   database: master_hunter_development
 test:
   <<: *default
