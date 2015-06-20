@@ -7,4 +7,8 @@ class Web::WelcomeController < Web::ApplicationController
 
     render layout: "landing_application"
   end
+
+  def help
+
+  end
 end
