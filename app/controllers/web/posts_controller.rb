@@ -11,6 +11,8 @@ class Web::PostsController < Web::ApplicationController
 
   def create
     @post = PostEditType.new params[:post]
+    @post.user = current_user
+    binding.pry
     if @post.save
       redirect_to root_path
     else
