@@ -1,23 +1,24 @@
-development:
-  adapter: postgresql
-  encoding: unicode
-  database: master_hunter_develoment
-  pool: 5
-  username: haukot
-  password:
-
-test:
-  adapter: postgresql
-  encoding: unicode
-  database: master_hunter_test
-  pool: 5
+default: &default
   username: postgres
-  password:
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  username: develop
+  database: master_hunter_development
+test:
+  <<: *default
+  username: develop
+  database: master_hunter_test
+
+staging:
+  <<: *default
+  username: develop
+  database: master_hunter_staging
 
 production:
-  adapter: postgresql
-  encoding: unicode
+  <<: *default
+  username: develop
   database: master_hunter_production
-  pool: 5
-  username: postgres
-  password:
