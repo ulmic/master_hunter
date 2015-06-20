@@ -1,0 +1,17 @@
+%header#header.alt
+  %h1
+    %a{ href: root_path }
+      %span
+        = t('application.attributes.name')
+  %nav#nav
+    %ul
+      %li
+        %a{:href => success_stories_path}
+          %span.fa.fa-star
+            = t('web.success_stories.index.title')
+      %li
+        %a{:href => new_post_path}
+          %span.fa.fa-plus
+            = t('web.posts.new.title')
+      %li
+        %a.button{:href => "#"} Sign Up

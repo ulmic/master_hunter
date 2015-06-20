@@ -1,0 +1,16 @@
+#= require jquery
+#= require jquery_ujs
+#= require twitter/bootstrap
+#= require moment
+#= require bootstrap-datetimepicker
+#= require pickers
+#= require moment/ru
+
+$ ->
+
+  init_datetimepickers = ->
+    $("input.datetime_picker").datetimepicker()
+    $("input.date_picker").datetimepicker()
+    return
+
+  init_datetimepickers()

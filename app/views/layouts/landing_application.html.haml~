@@ -3,7 +3,9 @@
   %meta{:charset => "utf-8"}/
   %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
 
-  = stylesheet_link_tag    "web/application"
+  = stylesheet_link_tag    "bootstrap_and_overrides", media: "all"
+  = stylesheet_link_tag    "application"
+  = stylesheet_link_tag    "application/web"
   = javascript_include_tag "application"
   = csrf_meta_tags
 %body.landing

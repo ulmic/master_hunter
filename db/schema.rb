@@ -26,17 +26,17 @@ ActiveRecord::Schema.define(version: 20150620074232) do
   end
 
   create_table "posts", force: :cascade do |t|
-    t.string   "nickname",          limit: 255
+    t.string   "nickname"
     t.text     "description"
     t.text     "place"
     t.date     "date"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "state",             limit: 255
-    t.string   "publication_state", limit: 255
-    t.string   "photo",             limit: 255
+    t.string   "state"
+    t.string   "publication_state"
+    t.string   "photo"
     t.integer  "user_id"
-    t.string   "story_state",       limit: 255
+    t.string   "story_state"
     t.text     "pet_type"
     t.text     "sterilization"
     t.text     "inoculation"
@@ -48,13 +48,13 @@ ActiveRecord::Schema.define(version: 20150620074232) do
   add_index "posts", ["user_id"], name: "index_posts_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.string   "name",            limit: 255
-    t.string   "email",           limit: 255
-    t.string   "password_digest", limit: 255
-    t.string   "phone",           limit: 255
+    t.string   "name"
+    t.string   "email"
+    t.string   "password_digest"
+    t.string   "phone"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "admin",                       default: false
+    t.boolean  "admin",           default: false
     t.text     "first_name"
     t.text     "last_name"
   end
