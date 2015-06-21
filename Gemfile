@@ -1,9 +1,11 @@
 source 'https://rubygems.org'
 
+ruby '2.1.5'
+
 gem 'rails', '~> 4.2'
 
 gem 'pg'
-gem 'unicorn'
+gem 'passenger', '~> 5.0.10'
 
 gem 'therubyracer', platforms: :ruby
 gem 'bcrypt-ruby', '~> 3.1.2'
@@ -48,4 +50,6 @@ end
 
 group :development, :test do
   gem 'pry'
+  gem 'capistrano'
+  gem 'capistrano-passenger'
 end
